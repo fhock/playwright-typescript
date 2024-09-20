@@ -15,7 +15,7 @@ test.describe('Form Layouts page', () => {
 
         await usingTheGridEmailInput.fill('test@test.com')
         await usingTheGridEmailInput.clear()
-        await usingTheGridEmailInput.pressSequentially('tes2@test.com', {delay: 1000})
+        await usingTheGridEmailInput.pressSequentially('test2@test.com', {delay: 500})
 
         //generic assertion
         const inputValue = await usingTheGridEmailInput.inputValue()
@@ -87,7 +87,7 @@ test('lists and dropdowns', async ({page}) => {
 
 test('tooltips', async ({page}) => {
     await page.getByText('Modal & Overlays').click()
-    await page.getByText('Toastr').click()
+    await page.getByText('Tooltip').click()
 
     const toolTipCard = page.locator('nb-card', {hasText:"Tooltip Placements"})
     await toolTipCard.getByRole('button', {name: "Top"}).hover()

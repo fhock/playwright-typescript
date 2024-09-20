@@ -6,7 +6,7 @@ test.beforeEach(async({page}) => {
 })
 
 test('auto waiting', async ({page})=> {
-    const sucessButton = page.locator('bg-success')
+    const sucessButton = page.locator('.bg-success')
     
     // await sucessButton.click()
 
@@ -16,14 +16,14 @@ test('auto waiting', async ({page})=> {
 
     // expect(text).toContain('Data loaded with AJAX get request')
 
-    await expect(sucessButton).toHaveText('Data loaded with AJAX get request', {timeout: 20000})
+    await expect(sucessButton).toHaveText('Data loaded with AJAX get request.', {timeout: 20000})
 })
 
 test('alternatice waits', async ({page}) => {
-    const sucessButton = page.locator('bg-success')
+    const sucessButton = page.locator('.bg-success')
 
     // ___ wait for element
-    await page.waitForSelector('bg-success')
+    await page.waitForSelector('.bg-success')
 
     // ___ wait for particular response
     await page.waitForResponse('http://uitestingplayground.com/ajaxdata')
@@ -36,5 +36,5 @@ test('alternatice waits', async ({page}) => {
     await page.waitForURL('http://uitestingplayground.com/ajaxdata')
 
     const text = await sucessButton.allTextContents()
-    expect(text).toContain('Data loaded with AJAX get request')
+    expect(text).toContain('Data loaded with AJAX get request.')
 })

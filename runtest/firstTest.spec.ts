@@ -6,7 +6,7 @@ test.beforeEach(async({page}) => {
 
 test.describe('suite1', () => {
     test.beforeEach(async({page}) => {
-        await page.getByText('Chart').click()
+        await page.getByText('Forms').click()
     })
 
     test('the first test', async ({page}) => {
