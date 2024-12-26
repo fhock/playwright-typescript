@@ -12,12 +12,6 @@ test.beforeEach( async({page}) => {
     
     await page.goto('https://conduit.bondaracademy.com/')
     await page.waitForTimeout(1000);
-
-    // For perform API request
-    await page.getByText('Sign in').click()
-    await page.getByRole('textbox', {name: "Email"}).fill('pwdites@test.com')
-    await page.getByRole('textbox', {name: "Password"}).fill('Password1')
-    await page.getByRole('button').click()
 })
 
 test('has title', async ({page}) => {
