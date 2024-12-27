@@ -33,6 +33,7 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    /* Setup auth dependencies browser for API testing */
     {
       name: 'setup', 
       testMatch: 'auth.setup.ts'
@@ -41,6 +42,11 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'], storageState: '.auth/user.json' },
       dependencies: ['setup']
+    },
+    /* Normal browser UI testing */
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] }
     },
 
     // {
